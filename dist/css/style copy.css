@@ -1234,11 +1234,10 @@ video#video_background {
 }
 
 .swiper {
-  width: 600px;
+  /* width: 600px;
   height: 300px;
-  /* overflow: visible; */
-  top: 52%;
-  transform: translate3d(0,0,0); /*enabling hardware accel*/
+  top: 52%; */
+  transform: translate3d(0,0,0);
 }
 
 .swiper-slide {

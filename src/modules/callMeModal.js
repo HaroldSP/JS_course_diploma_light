@@ -13,8 +13,8 @@ const callMeModal = () => {
     console.log(e.target)
     if (e.target.classList.contains('callback-btn')) {
       console.log(e.target);
-      modalOverlay.style.display = 'flex';
-      modalCallMe.style.display = 'flex';
+      modalOverlay.style.display = 'block';
+      modalCallMe.style.display = 'block';
     } else if (e.target.classList.contains('modal-overlay') || e.target.closest('.modal-close')) {
       modalOverlay.style.display = 'none';
       modalCallMe.style.display = 'none';
