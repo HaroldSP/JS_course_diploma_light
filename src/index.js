@@ -5,7 +5,7 @@
 'strict';
 
 import callMeModal from './modules/callMeModal';
-import twoModule from './modules/two.js';
+// import scroll from './modules/scroll';
 
 callMeModal();
-twoModule();
+// scroll();
