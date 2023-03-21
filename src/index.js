@@ -4,8 +4,8 @@
 
 'strict';
 
-import oneModule from './modules/one.js';
+import callMeModal from './modules/callMeModal';
 import twoModule from './modules/two.js';
 
-oneModule();
+callMeModal();
 twoModule();
