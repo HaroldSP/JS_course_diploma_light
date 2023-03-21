@@ -650,15 +650,6 @@ a.absolute {
 	position: relative;
 	z-index: 10;
 }
-
-.container {
-	display: flex;
-	width: 100%;
-	/* top: 100%; */
-	position: relative;
-	z-index: 10;
-}
-
 .num-section .num {
 	font-size: 50px;
 	line-height: 1;
@@ -906,7 +897,7 @@ video#video_background {
 	background: url(../images/pattern2.png);
 	z-index: 1;
 }
-/* 
+
 @media only screen and (min-width: 768px) {
 	.top-slider .item {
 		height: 400px;
@@ -975,7 +966,7 @@ video#video_background {
 	.top-slider {
 		height: 600px;
 	}
-} */
+}
 /* end top slider */
 
 /************************* accordeon **************************/
@@ -1246,7 +1237,7 @@ video#video_background {
   width: 600px;
   height: 300px;
   /* overflow: visible; */
-  /* top: 52%; */
+  top: 52%;
   transform: translate3d(0,0,0); /*enabling hardware accel*/
 }
 
@@ -1275,15 +1266,15 @@ video#video_background {
   color: #000;
   font-family: 'Lato', sans-serif;
   opacity: 1;
-  background: rgba(148, 156, 223, 0.7);
-  /* top: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  top: 100%;
   position: relative;
-  bottom: 100px; */
+  bottom: 100px;
 }
 
 .swiper-pagination-bullet-active {
   color: #fff;
   font-family: 'Lato', sans-serif;
-  background: rgba(0, 122, 255, 0.7);
+  background: rgba(0, 122, 255, 0.3);
 }
 /**** /. services section *****/
