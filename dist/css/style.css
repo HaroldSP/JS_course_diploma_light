@@ -859,7 +859,7 @@ hr.white {
 	position: relative;
 }
 .top-slider .item:before {
-	/* content: ""; */
+	content: "";
 	display: block;
 	position: absolute;
 	width: 100%;
@@ -933,8 +933,8 @@ video#video_background {
 		height: 520px;
 	}
 	.top-slider .table {
-		opacity: 0;
-		visibility: hidden;
+		opacity: 1;
+		visibility: visible;
 		-webkit-transform: scale(1.5);
 		-ms-transform: scale(1.5);
 		-o-transform: scale(1.5);
@@ -1295,7 +1295,4 @@ video#video_background {
   background: rgba(205, 220, 236, 0.7);
 }
 
-.table-cell .container {
-	background-color: rgba(0, 0, 0, 0.3);
-}
 /**** /. services section *****/
