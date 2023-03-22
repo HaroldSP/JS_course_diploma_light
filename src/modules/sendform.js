@@ -8,10 +8,10 @@ const sendForm = ({ formId }) => {
 
   // //////////////////////////////////////////////////                    new listners before submitting forms                             //////////////////////////////////////////////////////////////
 
-  const forms = document.querySelectorAll('[name="form-callback"]');
-
   const textInputs = document.querySelectorAll('input[name="fio"]');
   const telInputs = document.querySelectorAll('input[name="tel"]');
+  const modalOverlay = document.querySelector('.modal-overlay');
+  const modalCallMe = document.querySelector('.modal-callback');
 
   textInputs.forEach(textInput => {
     textInput.addEventListener('blur', () => {
@@ -20,7 +20,6 @@ const sendForm = ({ formId }) => {
       inputValue = inputValue.replace(/[-]+/g, '-');
       inputValue = inputValue.replace(/[\s]+/g, ' ');
       inputValue = inputValue.replace(/[^а-яА-яёЁ\s-]/g, '');
-      // inputValue = inputValue.toLowerCase().replace(/\b\w/g, (letter) => letter.toUpperCase());
       inputValue = inputValue.split(' ');
       inputValue = inputValue.map((word) => {
         const firstLetter = word.charAt(0).toUpperCase();
@@ -64,7 +63,6 @@ const sendForm = ({ formId }) => {
 
   const form = document.getElementById(formId);
   const sendBtn = document.querySelector('.button.btn.feedback');
-  const statusPlaceHolder = document.querySelector('#status');
   const defaultText = 'Отправить'
   const errorText = 'Ошибка...';
   const sendingText = 'Отправляем...';
@@ -115,10 +113,10 @@ const sendForm = ({ formId }) => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
-        return res.json();
+        return res;
       })
-      .then(json => {
-        console.log('Response:', json); // Log the server response
+      .then(res => {
+        console.log('Response:', res);
       })
       .catch(error => {
         console.error('Error:', error);
@@ -131,34 +129,24 @@ const sendForm = ({ formId }) => {
     let formBody = {};
 
     sendBtn.value = sendingText;
-    // statusPlaceHolder.innerHTML = sendingText;
 
     formData.forEach((val, key) => {
       if (val) formBody[key] = val;
     });
-    // formBody = JSON.stringify(formBody);
-    // console.log(formBody)
-    // someElem.forEach(elem => {
-    //   const element = document.getElementById(elem.id);
-    //   if ((elem.type === 'block') && (element.textContent.trim() !== '')) {
-    //     formBody[elem.id] = element.textContent.trim();
-    //   } else if ((elem.type === 'input') && (element.value.trim() !== '')) {
-    //     formBody[elem.id] = element.value.trim();
-    //   }
-    // });
-    // console.log('submit');
-    // console.log(validate(formElements))
 
     if (validate(formElements)) {
       sendData(formBody).then(data => {
         setTimeout(() => {
           sendBtn.value = successText;
-        //   statusPlaceHolder.innerHTML = successText;
         }, 1);
 
         setTimeout(() => {
           sendBtn.value = defaultText;
-        //   statusPlaceHolder.innerHTML = defaultText;
+        }, 3000);
+
+        setTimeout(() => {
+          modalOverlay.style.display = 'none';
+          modalCallMe.style.display = 'none'; ;
         }, 3000);
 
         formElements.forEach(input => {
@@ -172,7 +160,6 @@ const sendForm = ({ formId }) => {
     } else {
     //   alert('Данные не валидны');
       sendBtn.value = defaultText;
-      //   statusPlaceHolder.innerHTML = defaultText;
       form.reset(); // uncomment to clear form
     };
   };
