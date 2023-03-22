@@ -1232,6 +1232,14 @@ video#video_background {
 	padding: 0 2px;
 	cursor: pointer;
 	background-color: rgba(0, 0, 0, 0.6);
+
+	cursor: pointer;
+  	opacity: 0;
+  	transition: opacity 0.3s ease;
+}
+
+.up.show {
+  opacity: 1;
 }
 
 @media only screen and (min-width: 992px) {
