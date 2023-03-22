@@ -113,6 +113,7 @@ h1,
 	margin-bottom: 20px;
 	font-family: "Helios";
 	font-weight: bold;
+	/* background-color: rgba(0, 0, 0, 0.2); */
 }
 h2,
 .title-h2 {
@@ -354,7 +355,7 @@ a.absolute {
 	line-height: 1.4;
 }
 .header-panel {
-	background: #21282e;
+	background: #2e2821;
 	color: #fff;
 	font-family: "Helios";
 	height: 36px;
@@ -858,7 +859,7 @@ hr.white {
 	position: relative;
 }
 .top-slider .item:before {
-	content: "";
+	/* content: ""; */
 	display: block;
 	position: absolute;
 	width: 100%;
@@ -956,6 +957,7 @@ video#video_background {
 	.top-slider .text {
 		font-size: 24px;
 		line-height: 1.6;
+		/* background-color: rgba(0, 0, 0, 0.2);; */
 	}
 }
 
@@ -1276,7 +1278,7 @@ video#video_background {
   background: rgba(0, 122, 255, 0.7);
 }
 
-/* .container {
-	color: #fff;
-} */
+.table-cell .container {
+	background-color: rgba(0, 0, 0, 0.3);
+}
 /**** /. services section *****/
