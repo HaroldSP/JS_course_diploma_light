@@ -22,6 +22,16 @@ const initSwiper = () => {
     navigation: {
       nextEl: '.arrow-right',
       prevEl: '.arrow-left'
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 10
+      },
+      1245: {
+        slidesPerView: 3,
+        spaceBetween: 10
+      }
     }
   });
 
