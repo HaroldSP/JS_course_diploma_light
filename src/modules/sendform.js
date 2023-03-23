@@ -97,16 +97,16 @@ const sendForm = ({ formId }) => {
     return success;
   };
 
-  // return fetch('https://jsonplaceholder.typicode.com/posts',
+  // return fetch('http://localhost:3000/dist/server.php'
   const sendData = (data) => {
-    return fetch('http://localhost:3000/dist/server.php', {
+    return fetch('https://jsonplaceholder.typicode.com/posts', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'http://localhost:8080',
-        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type'
+        'Content-Type': 'application/json'
+        // 'Access-Control-Allow-Origin': 'http://localhost:8080',
+        // 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+        // 'Access-Control-Allow-Headers': 'Content-Type'
       }
     })
       .then(res => {
@@ -160,7 +160,7 @@ const sendForm = ({ formId }) => {
     } else {
     //   alert('Данные не валидны');
       sendBtn.value = defaultText;
-      form.reset(); // uncomment to clear form
+      // form.reset(); // uncomment to clear form
     };
   };
 

@@ -12,7 +12,7 @@ const initSwiper = () => {
   const swiper = new Swiper('.top-slider', {
     modules: [Navigation, Pagination, Autoplay],
     slidesPerView: 1,
-    spaceBetween: 50,
+    spaceBetween: 0,
     loop: true,
     autoplay: {
       // delay: 2500,
